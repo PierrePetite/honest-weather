@@ -14,36 +14,53 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=56ff5b81f14
 //Array zu Variable
 $temp = $weather['main']['temp'];
 $type = $weather['weather'][0]['main'];
+$icon = $weather['weather'][0]['icon'];
 $name = $weather['name'];
 $id = $weather['weather'][0]['id'];
 
 
-
-
 if($id == "800") 
    {
-   $text = "<h1>Yeah! <h2>Lovely</h2><h1> clear sky.</h1>";
+   $text1 = "Holy!";
+    $text2 = "You have";
+    $text3 = "freaking";
+    $text4 = "clear sky!";
+    $iconurl = "clear sky!";
    }
 
 if($id == "801") 
    {
-   $text = "<h1>There only some <h2>lovely</h2><h1> clouds. Don't cry.</h1>";
+   $text1 = "Whoop!";
+    $text2 = "Almost no";
+    $text3 = "fucking";
+    $text4 = "clouds out there.";
    }
 
 if($id == "802") 
    {
-   $text = "<h1>Is's full with <h2>fucking</h2><h1> scattered clouds.</h1>";
+   $text1 = "Nice.";
+    $text2 = "Only some";
+    $text3 = "lovely";
+    $text4 = "clouds.";
    }
 
 if($id == "803") 
    {
-   $text = "<h1>Is's full with <h2>shitty</h2><h1> broken clouds.</h1>";
+   $text1 = "You like gray?";
+    $text2 = "'cause it's";
+    $text3 = "fucking";
+    $text4 = "cloudy.";
    }
 
 if($id == "804") 
    {
-   $text = "<h1>Ok. Thats bad. <h2>Gray</h2><h1> all over the sky.</h1>";
+   $text1 = "Shit.";
+    $text2 = "It's";
+    $text3 = "fucking";
+    $text4 = "cloudy.";
    }
+
+
 
 
 
@@ -53,23 +70,52 @@ if($id == "804")
 
 
 
+
 <!DOCTYPE html>
-<html lang="de">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Honest Weather</title>
-      <link href="style.css" rel="stylesheet" type="text/css">
-      <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+    <link href="./main.css" rel="stylesheet" />
   </head>
   <body>
-       <?php echo $text; ?>.
-<br><br>
+    <main>
+      <img src="./assets/<?php echo $icon; ?>.svg" />
+      <div class="text">
+        <p class="title">
+          <br><br><?php echo $text1; ?><br />
+          <?php echo $text2; ?><br />
+          <span class="highlighted"><?php echo $text3; ?></span>
+          <br />
+          <?php echo $text4; ?>
+        </p>
+            <br><br>
+        
+        <p class="sub">Ah. And it's <?php echo $temp; ?>°. But nevermind.</p>
 
+       
+      </div>
+    </main>
       
-<p>Ah. And it's <?php echo $temp; ?>°. But nevermind.</p>
       
+    <main>
+      <img src="./assets/<?php echo $icon; ?>.svg" />
+      <div class="text">
+        <p class="title">
+          <br><br><?php echo $text1; ?><br />
+          <?php echo $text2; ?><br />
+          <span class="highlighted"><?php echo $text3; ?></span>
+          <br />
+          <?php echo $text4; ?>
+        </p>
+            <br><br>
+        
+        <p class="sub">Ah. And it's <?php echo $temp; ?>°. But nevermind.</p>
 
+       
+      </div>
+    </main>  
   </body>
 </html>
-
